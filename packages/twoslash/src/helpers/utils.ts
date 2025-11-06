@@ -1,5 +1,5 @@
 import type { ExpressiveCodeBlock } from "@expressive-code/core";
-import type { TwoslashOptions } from "twoslash";
+import type { TwoslashOptions } from "@arkts/twoslash";
 import { reTrigger, twoslashDefaultTags } from "./regex";
 
 /**

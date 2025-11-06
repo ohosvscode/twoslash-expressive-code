@@ -1,7 +1,7 @@
 import { type ExpressiveCodePlugin, definePlugin } from "@expressive-code/core";
 import { ExpressiveCode } from "expressive-code";
-import { createTwoslasher } from "twoslash";
-import ts, { type CompilerOptions } from "typescript";
+import { createTwoslasher } from "@arkts/twoslash";
+import { loadAllApiFiles, loadAllGlobalFiles } from "@arkts/twoslash/loader";
 import {
 	TwoslashCompletionAnnotation,
 	TwoslashCustomTagsAnnotation,
@@ -38,29 +38,6 @@ declare module "@expressive-code/core" {
 }
 
 /**
- * Default TypeScript compiler options used in TwoSlash.
- *
- * @constant
- * @type {CompilerOptions}
- * @property {boolean} strict - Enable all strict type-checking options.
- * @property {ts.ScriptTarget} target - Specify ECMAScript target version.
- * @property {boolean} exactOptionalPropertyTypes - Ensure optional property types are exactly as declared.
- * @property {boolean} downlevelIteration - Provide full support for iterables in ES5/ES3.
- * @property {boolean} skipLibCheck - Skip type checking of declaration files.
- * @property {string[]} lib - List of library files to be included in the compilation.
- * @property {boolean} noEmit - Do not emit outputs.
- */
-const defaultCompilerOptions: CompilerOptions = {
-	strict: true,
-	target: ts.ScriptTarget.ES2022,
-	exactOptionalPropertyTypes: true,
-	downlevelIteration: true,
-	skipLibCheck: true,
-	lib: ["Bundler", "ES2022", "DOM", "DOM.Iterable"],
-	noEmit: true,
-};
-
-/**
  * Add Twoslash support to your Expressive Code TypeScript code blocks.
  *
  * @param {PluginTwoslashOptions} options - Configuration options for the plugin.
@@ -79,7 +56,7 @@ export default function ecTwoSlash(
 	 */
 	const {
 		explicitTrigger = true,
-		languages = ["ts", "tsx"],
+		languages = ["ets"],
 		includeJsDoc = true,
 		allowNonStandardJsDocTags = false,
 		twoslashOptions = checkForCustomTagsAndMerge(options.twoslashOptions),
@@ -91,6 +68,8 @@ export default function ecTwoSlash(
 	 * @returns {Twoslasher} A new instance of the Twoslasher.
 	 */
 	const twoslasher = createTwoslasher({
+		etsApiFiles: loadAllApiFiles(),
+		etsGlobalScopeFiles: loadAllGlobalFiles(),
 		...twoslashOptions,
 	});
 
@@ -125,15 +104,9 @@ export default function ecTwoSlash(
 					const twoslash = twoslasher(codeWithIncludes, codeBlock.language, {
 						...twoslashOptions,
 						compilerOptions: {
-							...defaultCompilerOptions,
 							...(twoslashOptions?.compilerOptions ?? {}),
 						},
 					});
-
-					// Update EC code block with the twoslash information
-					if (twoslash.extension) {
-						codeBlock.language = twoslash.extension;
-					}
 
 					// Process the Twoslash code block and replace the EC code block with the Twoslash code block
 					processTwoslashCodeBlock(codeBlock, codeWithIncludes, twoslash.code);

@@ -4,7 +4,7 @@ import {
 	type ExpressiveCodeLine,
 } from "@expressive-code/core";
 import { type Element, h } from "@expressive-code/core/hast";
-import type { NodeTag } from "twoslash";
+import type { NodeTag } from "@arkts/twoslash";
 import { getCustomTagClass, getCustomTagString } from "../helpers";
 import { customTagsIcons } from "../icons/customTagsIcons";
 import type { CustomTagsIcon, TwoslashTag } from "../types";

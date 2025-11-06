@@ -1,5 +1,5 @@
 import type { Element } from "@expressive-code/core/hast";
-import type { TwoslashOptions } from "twoslash";
+import type { TwoslashOptions } from "@arkts/twoslash";
 import type { completionIcons } from "./icons/completionIcons";
 import type { customTagsIcons } from "./icons/customTagsIcons";
 
@@ -43,7 +43,7 @@ export interface PluginTwoslashOptions {
 	/**
 	 * The languages to apply this transformer to.
 	 *
-	 * @default ["ts", "tsx"]
+	 * @default ["ets"]
 	 */
 	readonly languages?: ReadonlyArray<string>;
 

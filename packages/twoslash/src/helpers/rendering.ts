@@ -3,7 +3,7 @@ import type { ExpressiveCode } from "expressive-code";
 import { fromMarkdown } from "mdast-util-from-markdown";
 import { gfmFromMarkdown } from "mdast-util-gfm";
 import { toHast } from "mdast-util-to-hast";
-import type { NodeHover, NodeQuery } from "twoslash";
+import type { NodeHover, NodeQuery } from "@arkts/twoslash";
 import type { RenderJSDocs } from "../types";
 import {
 	jsdocTags,

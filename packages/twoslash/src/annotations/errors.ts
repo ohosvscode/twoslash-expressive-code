@@ -4,7 +4,7 @@ import {
 	type ExpressiveCodeLine,
 } from "@expressive-code/core";
 import { type Element, h } from "@expressive-code/core/hast";
-import type { NodeError } from "twoslash";
+import type { NodeError } from "@arkts/twoslash";
 import { getErrorLevelClass, getErrorLevelString } from "../helpers";
 
 export class TwoslashErrorUnderlineAnnotation extends ExpressiveCodeAnnotation {

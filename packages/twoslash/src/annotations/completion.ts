@@ -4,7 +4,7 @@ import {
 	type ExpressiveCodeLine,
 } from "@expressive-code/core";
 import { h } from "@expressive-code/core/hast";
-import type { NodeCompletion } from "twoslash";
+import type { NodeCompletion } from "@arkts/twoslash";
 import { getTextWidthInPixels } from "../helpers";
 import type { CompletionItem } from "../types";
 

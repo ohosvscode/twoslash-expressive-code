@@ -4,7 +4,7 @@ import {
 	type ExpressiveCodeLine,
 } from "@expressive-code/core";
 import { type Element, h } from "@expressive-code/core/hast";
-import type { NodeQuery } from "twoslash";
+import type { NodeQuery } from "@arkts/twoslash";
 import { getTextWidthInPixels } from "../helpers";
 import type { RenderJSDocs } from "../types";
 

@@ -1,4 +1,4 @@
-import type { NodeError } from "twoslash";
+import type { NodeError } from "@arkts/twoslash";
 import type { TwoslashTag } from "../types";
 
 /**

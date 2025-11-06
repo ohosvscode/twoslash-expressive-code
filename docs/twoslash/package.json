@@ -16,7 +16,7 @@
 		"astro": "^5.3.0",
 		"astro-expressive-code": "^0.40.2",
 		"sharp": "^0.33.5",
-		"expressive-code-twoslash": "workspace:*",
+		"@arkts/twoslash-expressive-code": "workspace:*",
 		"starlight-package-managers": "^0.10.0",
 		"rehype-expressive-code": "^0.40.2",
 		"mdast-util-to-markdown": "^2.1.2",

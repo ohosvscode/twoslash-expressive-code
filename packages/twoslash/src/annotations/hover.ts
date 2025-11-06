@@ -3,7 +3,7 @@ import {
 	ExpressiveCodeAnnotation,
 } from "@expressive-code/core";
 import { type Element, type Root, h } from "@expressive-code/core/hast";
-import type { NodeHover } from "twoslash";
+import type { NodeHover } from "@arkts/twoslash";
 import type { RenderJSDocs } from "../types";
 
 /**

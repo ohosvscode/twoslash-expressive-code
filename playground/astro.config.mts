@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import ectwoslash from "expressive-code-twoslash";
-import ts, { type CompilerOptions } from "typescript";
+import ectwoslash from "@arkts/twoslash-expressive-code";
+import etsTmLanguageJson from './ets.tmLanguage.json';
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,16 +9,21 @@ export default defineConfig({
 		starlight({
 			title: "Starlight",
 			expressiveCode: {
-				// themes: ['github-dark-dimmed'],
-				plugins: [ectwoslash({
-					twoslashOptions: {
-						compilerOptions: {
-							target: ts.ScriptTarget.ESNext,
-							moduleResolution: ts.ModuleResolutionKind.Bundler
+				plugins: [
+					ectwoslash(),
+				],
+
+				shiki: {
+					langs: [
+						'ts', 
+						{
+							...etsTmLanguageJson as any,
+							name: 'ets',
+							aliases: ['arkts'],
 						}
-					}
-				})],
-			},
+					],
+				}
+			}
 		}),
 	],
 });

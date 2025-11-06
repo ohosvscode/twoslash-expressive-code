@@ -1,126 +1,46 @@
 ---
-title: My docs
+title: ArkTS Support
 description: Learn more about my project in this docs site built with Starlight.
 ---
 
-## Basic
+This page using to test the ArkTS support of Twoslash.
 
-```ts twoslash
-import { defineConfig } from "astro/config";
+```ets twoslash
+import { ArcList, ArcListAttribute, ArcListItem } from '@kit.ArkUI'
 
-// https://astro.build/config
-export default defineConfig({})
-```
+// Plain function
+function add(a: number, b: number): number {
+  return a + b;
+}
 
-## Test Cutting
+add(1, 3);
 
-### cut-before and cut-after
+// ArkTS API20 @interface style decorator support
+@interface MyDecorator {
+  /**
+   * @description The value of the decorator
+   * @default "hello"
+   */
+  value: string = "hello";
+}
 
-```ts twoslash title="astro.config.mjs"
-import { defineConfig } from "astro/config";
-import starlight from "@astrojs/starlight";
-// ---cut-before---
-import ectwoslash from "expressive-code-twoslash";
+@MyDecorator({ value: "hello" })
+class MyClass {
+  value: string = "hello";
+}
 
-// https://astro.build/config
-export default defineConfig({
-	integrations: [
-		starlight({
-			title: "Starlight",
-			expressiveCode: {
-				plugins: [ectwoslash()],
-			},
-		}),
-	],
-});
-// ---cut-after---
-const removethis = "will be removed";
-```
-
-### cut-start and cut-end "Between"
-
-```ts twoslash title"example-between.ts"
-// foo and bar is not visible
-const hello = "hello";
-const world = "world";
-
-// ---cut-start---
-const foo = "foo";
-const bar = "bar";
-// ---cut-end---
-
-const helloWorld = `${hello}${world}`;
-
-```
-
-## Test Errors
-
-```ts twoslash title="example-ts-error.ts"
-// @errors: 2322
-const willNotError: string = "i am a string";
-const willCauseError: string = 1;
-```
-
-## Test Queries
-
-### Test Type Extraction
-
-```ts twoslash title="example-type.ts"
-const world: string = "world";
-
-const hello = `Hello ${world}`;
-//    ^?
-```
-
-### Test Completions
-
-```ts twoslash title="example-completion.ts"
-// @noErrors
-
-console.c
-//       ^|
-
-```
-
-### Test Highlighting
-
-```ts twoslash title="example-highlights.ts"
-
-const hello = "world";
-//            ^^^^^^^
-
-```
-
-## Test Custom Tags
-
-### Errors
-
-```ts twoslash
-// @error: test
-const exampleErrorCallout = 1
-
-```
-
-### Warnings
-
-```ts twoslash
-// @warn: foo
-const exampleWarnCallout = 2
-
-```
-
-### Annotations
-
-```ts twoslash
-// @annotate: bar
-const exampleAnnotateCallout = 3
-
-```
-
-### Logs
-
-```ts twoslash
-// @log: hello world
-const exampleLogCallout = 4
-
+// Struct component support
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      ArcList() {
+        ArcListItem() {
+          Text("Hello")
+        }
+      }.width(100).height(100)
+    }.width(100)
+  }
+}
 ```

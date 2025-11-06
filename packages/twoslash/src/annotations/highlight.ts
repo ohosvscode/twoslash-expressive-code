@@ -3,7 +3,7 @@ import {
 	ExpressiveCodeAnnotation,
 } from "@expressive-code/core";
 import { type Element, type Root, h } from "@expressive-code/core/hast";
-import type { NodeHighlight } from "twoslash";
+import type { NodeHighlight } from "@arkts/twoslash";
 
 /**
  * Represents a highlight annotation for Twoslash.

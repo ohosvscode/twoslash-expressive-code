@@ -1,5 +1,5 @@
 import type { ExpressiveCodeBlock } from "expressive-code";
-import type { NodeCompletion, TwoslashReturn } from "twoslash";
+import type { NodeCompletion, TwoslashReturn } from "@arkts/twoslash";
 import { completionIcons } from "../icons/completionIcons";
 import type { CompletionIcon, CompletionItem } from "../types";
 
