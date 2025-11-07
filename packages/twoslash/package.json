@@ -1,6 +1,6 @@
 {
 	"name": "@arkts/twoslash-expressive-code",
-	"version": "0.5.6",
+	"version": "0.5.7",
 	"description": "Twoslash expressive code support for ArkTS language, Add Twoslash support to your Expressive Code TypeScript code blocks.",
 	"author": {
 		"email": "adam@matthiesen.xyz",
