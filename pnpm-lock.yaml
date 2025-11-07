@@ -88,8 +88,8 @@ importers:
   packages/twoslash:
     dependencies:
       '@arkts/twoslash':
-        specifier: ^0.3.6
-        version: 0.3.6(ohos-typescript@4.9.5-r10)
+        specifier: ^0.3.7
+        version: 0.3.7(ohos-typescript@4.9.5-r10)
       '@expressive-code/core':
         specifier: '>=0.40.0'
         version: 0.40.2
@@ -146,8 +146,8 @@ importers:
 
 packages:
 
-  '@arkts/twoslash@0.3.6':
-    resolution: {integrity: sha512-MnqMNzfTDUumR99HRiElgqMjzo9xRe9mRxgRZxhpMhK5OxLhGsOm/JKEEyLb+U9AaIu6Q/ktsyGVbWFiXkvAng==, tarball: https://registry.npmjs.org/@arkts/twoslash/-/twoslash-0.3.6.tgz}
+  '@arkts/twoslash@0.3.7':
+    resolution: {integrity: sha512-6pBK94d9aAT7gp0DfuYN+1F3H3W0ssIT4j93xSCl+YIVW+pwYZyO/j+9U+SUHNSHzhT/givjezXGCspu9SXrsg==, tarball: https://registry.npmjs.org/@arkts/twoslash/-/twoslash-0.3.7.tgz}
     peerDependencies:
       ohos-typescript: ^4.9.5-r10
 
@@ -3528,7 +3528,7 @@ packages:
 
 snapshots:
 
-  '@arkts/twoslash@0.3.6(ohos-typescript@4.9.5-r10)':
+  '@arkts/twoslash@0.3.7(ohos-typescript@4.9.5-r10)':
     dependencies:
       '@typescript/vfs': '@arkts/vfs@1.1.5'
       fast-glob: 3.3.3
