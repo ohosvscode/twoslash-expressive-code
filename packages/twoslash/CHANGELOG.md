@@ -1,5 +1,11 @@
 # expressive-code-twoslash
 
+## 0.5.6
+
+### Patch Changes
+
+- [`461e423`](https://github.com/MatthiesenXYZ/EC-Plugins/commit/461e4237456a9b5acb96a07717ab110b6102130e) Thanks [@Groupguanfang](https://github.com/Groupguanfang)! - fix: change plugin name, update to 0.3.6
+
 ## 0.5.5
 
 ### Patch Changes
