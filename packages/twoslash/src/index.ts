@@ -78,7 +78,7 @@ export default function ecTwoSlash(
 	const includesMap = new Map();
 
 	return definePlugin({
-		name: "expressive-code-twoslash",
+		name: "expressive-code-arkts-twoslash",
 		jsModules: [floatingUiCore, floatingUiDom, hoverDocsManager],
 		styleSettings: twoSlashStyleSettings,
 		baseStyles: (context) => getTwoSlashBaseStyles(context),
