@@ -1,5 +1,11 @@
 # expressive-code-twoslash
 
+## 0.5.7
+
+### Patch Changes
+
+- [`d8741d3`](https://github.com/MatthiesenXYZ/EC-Plugins/commit/d8741d3ea9ed6031180a64ca66a7799e324001ce) Thanks [@Groupguanfang](https://github.com/Groupguanfang)! - chore: update twoslash to 0.3.7
+
 ## 0.5.6
 
 ### Patch Changes
